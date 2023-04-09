@@ -1,8 +1,8 @@
 package org.example.Task10.services;
 
 public class Radio {
-    public int currentRadioStationNumber;
-    public int soundVolume;
+    private int currentRadioStationNumber;
+    private int soundVolume;
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
