@@ -5,6 +5,22 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
+
+    @Test
+    public void constructorWithIndicators() {
+        Radio other = new Radio(30);
+        other.setCurrentRadioStationNumber(29);
+
+        Assertions.assertEquals(30, other.getMaxRadioStation());
+        Assertions.assertEquals(29, other.getCurrentRadioStationNumber());
+    }
+
+    @Test
+    public void constructorWithoutParameters() {
+        Radio other = new Radio();
+        Assertions.assertEquals(10, other.getMaxRadioStation());
+    }
+
     @Test
     public void setNextZeroStation() {
         Radio other = new Radio();
@@ -24,7 +40,7 @@ public class RadioTest {
     }
 
     @Test
-    public void setStationlimit() {
+    public void setStationLimit() {
         Radio other = new Radio();
         other.setCurrentRadioStationNumber(19);
         int expected = 0;

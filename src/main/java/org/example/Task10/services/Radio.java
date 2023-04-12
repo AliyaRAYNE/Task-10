@@ -3,6 +3,18 @@ package org.example.Task10.services;
 public class Radio {
     private int currentRadioStationNumber;
     private int soundVolume;
+    private int maxRadioStation = 10;
+
+    public int getMaxRadioStation() {
+        return maxRadioStation;
+    }
+
+    public Radio(int maxRadioStation) {
+        this.maxRadioStation = maxRadioStation;
+    }
+
+    public Radio() {
+    }
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
@@ -12,14 +24,14 @@ public class Radio {
         if (newCurrentRadioStationNumber < 0) {
             return;
         }
-        if (newCurrentRadioStationNumber > 9) {
+        if (newCurrentRadioStationNumber > maxRadioStation - 1) {
             return;
         }
         currentRadioStationNumber = newCurrentRadioStationNumber;
     }
 
     public void next() {
-        if (currentRadioStationNumber == 9) {
+        if (currentRadioStationNumber == maxRadioStation - 1) {
             currentRadioStationNumber = 0;
         } else {
             currentRadioStationNumber++;
@@ -28,7 +40,7 @@ public class Radio {
 
     public void prev() {
         if (currentRadioStationNumber == 0) {
-            currentRadioStationNumber = 9;
+            currentRadioStationNumber = maxRadioStation - 1;
         } else {
             currentRadioStationNumber--;
         }
